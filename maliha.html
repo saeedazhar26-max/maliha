@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Month Friendship!</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #FF69B4;
+            font-size: 3em;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px #fff;
+        }
+
+        h2 {
+            color: #FF1493;
+            font-size: 1.8em;
+            margin-top: 0;
+            text-shadow: 1px 1px #fff;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        /* Confetti style */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFD700;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Heart animation */
+        .heart {
+            color: #FF1493;
+            font-size: 2em;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.4); }
+        }
+
+        /* Button */
+        .button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy 1 Month, Maliha! <span class="heart">❤️</span></h1>
+    <h2>Our friendship is amazing!</h2>
+    <p>Here’s to many more memories, laughs, and adventures together 🥳</p>
+    <button class="button" onclick="sendLove()">Click for a surprise 💌</button>
+
+    <script>
+        // Confetti generator
+        for (let i = 0; i < 50; i++) {
+            let confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * window.innerWidth + 'px';
+            confetti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 70%)`;
+            confetti.style.animationDuration = (2 + Math.random()*3) + 's';
+            confetti.style.width = confetti.style.height = (5 + Math.random()*10) + 'px';
+            document.body.appendChild(confetti);
+        }
+
+        // Button surprise
+        function sendLove() {
+            alert("Maliha, you’re the best! 🎉💖");
+        }
+    </script>
+</body>
+</html>
